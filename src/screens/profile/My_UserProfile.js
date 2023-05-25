@@ -6,18 +6,18 @@ import Bottomnavbar from '../../components/Bottomnavbar'
 import Topnavbar from '../../components/Topnavbar'
 import FollowersRandomPost from '../../components/FollowersRandomPost'
 
-const MainPage = ({navigation}) => {
+const My_UserProfile = ({navigation}) => {
   return (
     <View style={styles.container}>
         <StatusBar />
-        <Bottomnavbar navigation={navigation} page={"Mainpage"}/>
+        <Bottomnavbar navigation={navigation} page={"My_UserProfile"}/>
         <Topnavbar />
-      <FollowersRandomPost />
+      <Text style={formHead}>Your Profile</Text>
     </View>
   )
 }
 
-export default MainPage
+export default My_UserProfile
 
 const styles = StyleSheet.create({
     container: {

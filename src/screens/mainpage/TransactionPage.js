@@ -6,18 +6,18 @@ import Bottomnavbar from '../../components/Bottomnavbar'
 import Topnavbar from '../../components/Topnavbar'
 import FollowersRandomPost from '../../components/FollowersRandomPost'
 
-const MainPage = ({navigation}) => {
+const TransactionPage = ({navigation}) => {
   return (
     <View style={styles.container}>
         <StatusBar />
-        <Bottomnavbar navigation={navigation} page={"Mainpage"}/>
+        <Bottomnavbar navigation={navigation} page={"TransactionPage"}/>
         <Topnavbar />
-      <FollowersRandomPost />
+      <Text style={formHead}>TapsCASH</Text>
     </View>
   )
 }
 
-export default MainPage
+export default TransactionPage
 
 const styles = StyleSheet.create({
     container: {

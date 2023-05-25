@@ -11,7 +11,7 @@ const Post_Big_Card = ({
             likes,
             comments
 }) => {
-    console.log(comments)
+    //console.log(comments)
     const [isliked, setIsLiked] = useState(false)
     const [showcomments, setShowComments] = useState(false)
   return (

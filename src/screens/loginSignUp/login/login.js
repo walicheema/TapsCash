@@ -4,7 +4,7 @@ import logo from '../../../../assets/logo.png'
 import { containerFull, hr80} from '../../../css/pagecss'
 import {formInput, formTextLinkRight, formTextLinkCenter} from '../../../css/formcss'
 import {formHead, formbtn} from '../../../css/formcss'
-const login = ({ navigation  }) => {
+const Login = ({ navigation  }) => {
   return (
     <View style={containerFull}>
         <Image source = {logo} style={logo}></Image>
@@ -34,6 +34,6 @@ Forgot Password?
   )
 }
 
-export default login
+export default Login
 
 const styles = StyleSheet.create({})

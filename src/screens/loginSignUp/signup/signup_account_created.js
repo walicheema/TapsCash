@@ -5,7 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 import logo from '../../../../assets/logo.png'
 import { formHead2, formHead3, formInput, formbtn } from '../../../css/formcss';
 
-const signup_account_created = ({navigation}) => {
+const Signup_account_created = ({navigation}) => {
   return (
     <View style={containerFull}>
       <TouchableOpacity onPress={() => navigation.navigate("Login")} style={goBack}>
@@ -36,6 +36,6 @@ const signup_account_created = ({navigation}) => {
 
 
 
-export default signup_account_created
+export default Signup_account_created
 
 const styles = StyleSheet.create({})

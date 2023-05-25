@@ -5,7 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 import logo from '../../../../assets/logo.png'
 import {formHead3, formInput, formbtn } from '../../../css/formcss';
 
-const forgotpassword_enterverificationcode = ({navigation}) => {
+const Forgotpassword_enterverificationcode = ({navigation}) => {
   return (
     <View style={containerFull}>
       <TouchableOpacity onPress={() => navigation.navigate("Login")} style={goBack}>
@@ -36,6 +36,6 @@ const forgotpassword_enterverificationcode = ({navigation}) => {
   )
 }
 
-export default forgotpassword_enterverificationcode
+export default Forgotpassword_enterverificationcode
 
 const styles = StyleSheet.create({})

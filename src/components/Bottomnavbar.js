@@ -6,13 +6,52 @@ import { Ionicons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { icons1 } from '../css/pagecss';
 
-const Bottomnavbar = () => {
+const Bottomnavbar = ({navigation, page}) => {
+    console.log(page)
   return (
     <View style={styles.container}>
-      <Entypo name="camera" size={24}  style={icons1}/>
-      <FontAwesome name="search" size={24} color="black" style={icons1}/>
-      <MaterialCommunityIcons name="contactless-payment" size={24} color="black" style={icons1}/>
-      <Ionicons name="person" size={24} color="black" style={icons1}/>
+
+        {
+            page === 'Mainpage' ?
+            <Entypo name="camera" size={24}  style={styles.activeicons1}
+
+            onPress={() => navigation.navigate('Mainpage')} />
+            :
+            <Entypo name="camera" size={24}  style={icons1}
+
+            onPress={() => navigation.navigate('Mainpage')} />
+        }
+        {
+            page === 'SearchUserPage' ?
+                <FontAwesome name="search" size={24} color="black" style={styles.activeicons1}
+                onPress={() => navigation.navigate('SearchUserPage')} 
+                />
+            :
+                <FontAwesome name="search" size={24} color="black" style={icons1}
+                onPress={() => navigation.navigate('SearchUserPage')} 
+                />
+        }
+        {
+            page === 'TransactionPage' ?
+            <MaterialCommunityIcons name="contactless-payment" size={24} color="black" style={styles.activeicons1}
+            onPress={() => navigation.navigate('TransactionPage')} 
+            />
+            :
+            <MaterialCommunityIcons name="contactless-payment" size={24} color="black" style={icons1}
+            onPress={() => navigation.navigate('TransactionPage')} 
+            />
+            
+        }
+        {
+            page === 'My_UserProfile' ?
+            <Ionicons name="person" size={24} color="black" style={styles.activeicons1}
+            onPress={() => navigation.navigate('My_UserProfile')} 
+            />
+            :
+            <Ionicons name="person" size={24} color="black" style={icons1}
+            onPress={() => navigation.navigate('My_UserProfile')} 
+            />
+        }
     </View>
   )
 }
@@ -33,6 +72,13 @@ const styles = StyleSheet.create({
         zIndex: 100,
         borderTopWidth: 1,
         paddingVertical: 10,
+        alignItems: 'center',
+    },
+    activeicons1: {
+        backgroundColor: 'white',
+        borderRadius: 50,
+        fontSize: 30,
+        padding: 10,
     }
 
 })
