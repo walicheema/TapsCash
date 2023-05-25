@@ -16,6 +16,7 @@ import MainPage from './src/screens/mainpage/Mainpage';
 import SearchUserPage from './src/screens/mainpage/SearchUserPage';
 import TransactionPage from './src/screens/mainpage/TransactionPage';
 import My_UserProfile from './src/screens/profile/My_UserProfile';
+import Settings1 from './src/screens/settings/Settings1';
 
 const Stack = createNativeStackNavigator();
 
@@ -60,7 +61,7 @@ export default function App() {
           animation: 'slide_from_bottom'
         }}
         />
-
+      <Stack.Screen name="Settings1" component={Settings1} />
 
 
       </Stack.Navigator>

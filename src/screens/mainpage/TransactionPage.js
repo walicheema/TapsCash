@@ -61,7 +61,7 @@ const TransactionPage = ({ navigation }) => {
       <StatusBar />
       <Bottomnavbar navigation={navigation} page={"TransactionPage"} />
       <Topnavbar />
-      <Text style={styles.usernameText}>Hello, Name</Text>
+      <Text style={styles.usernameText}>Hello, {data.username}</Text>
       <View style={styles.tapContainer}>
         <TouchableOpacity style={styles.circle} onPress={handleTapPress}>
           <Text style={styles.circleText}>TAP!</Text>
