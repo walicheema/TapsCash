@@ -7,7 +7,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { icons1 } from '../css/pagecss';
 
 const Bottomnavbar = ({navigation, page}) => {
-    console.log(page)
+    //console.log(page)
   return (
     <View style={styles.container}>
 
