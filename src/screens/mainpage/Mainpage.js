@@ -5,15 +5,18 @@ import { formHead } from '../../css/formcss'
 import Bottomnavbar from '../../components/Bottomnavbar'
 import Topnavbar from '../../components/Topnavbar'
 import FollowersRandomPost from '../../components/FollowersRandomPost'
+import { LinearGradient } from 'expo-linear-gradient'
 
 const MainPage = ({navigation}) => {
   return (
+    <LinearGradient colors={['#05B3EA', 'pink']} style={styles.gradientContainer}>
     <View style={styles.container}>
         <StatusBar />
         <Bottomnavbar navigation={navigation} page={"Mainpage"}/>
         <Topnavbar />
       <FollowersRandomPost />
     </View>
+    </LinearGradient>
   )
 }
 
@@ -23,7 +26,6 @@ const styles = StyleSheet.create({
     container: {
         width: '100%',
         height: '100%',
-        backgroundColor: 'black',
         paddingVertical: 50,
     }
 })

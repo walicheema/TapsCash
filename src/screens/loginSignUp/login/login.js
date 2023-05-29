@@ -4,8 +4,10 @@ import logo from '../../../../assets/logo.png'
 import { containerFull, hr80} from '../../../css/pagecss'
 import {formInput, formTextLinkRight, formTextLinkCenter} from '../../../css/formcss'
 import {formHead, formbtn} from '../../../css/formcss'
+import { LinearGradient } from 'expo-linear-gradient'
 const Login = ({ navigation  }) => {
   return (
+    <LinearGradient colors={['#05B3EA', 'pink']} style={styles.gradientContainer}>
     <View style={containerFull}>
         <Image source = {logo} style={logo}></Image>
         <Text style={formHead}>Login</Text>
@@ -19,7 +21,7 @@ Forgot Password?
 </Text>
 
     <Text style={formbtn} onPress={
-        () => navigation.navigate('Mainpage')
+        () => navigation.navigate('TransactionPage')
     }>
         Submit
     </Text>
@@ -31,9 +33,16 @@ Forgot Password?
             onPress={() => navigation.navigate('Signup_enterEmail')}>Don't have an account? Signup</Text>
     </Text>
     </View>
+    </LinearGradient>
   )
 }
 
 export default Login
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  gradientContainer: {
+    fill: 1
+  }
+
+
+})

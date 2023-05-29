@@ -2,14 +2,14 @@ module.exports = {
     containerFull: {
         width: '100%',
         height: '100%',
-        backgroundColor: 'black',
         alignItems: 'center',
         justifyContent: 'center'
     },
     logo:{
         height: 70,
         resizeMode: 'contain',
-        marginBottom: 20
+        marginBottom: 20,
+        marginTop: 100,
     },
     hr80: {
         width: '80%',

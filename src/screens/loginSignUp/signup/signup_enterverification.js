@@ -4,11 +4,13 @@ import { containerFull, goBack, logo1 } from '../../../css/pagecss'
 import { Ionicons } from '@expo/vector-icons';
 import logo from '../../../../assets/logo.png'
 import {formHead3, formInput, formbtn } from '../../../css/formcss';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const Signup_enterverification = ({navigation}) => {
   return (
+    <LinearGradient colors={['#05B3EA', 'pink']} style={styles.gradientContainer}>
     <View style={containerFull}>
-      <TouchableOpacity onPress={() => navigation.navigate("Login")} style={goBack}>
+      <TouchableOpacity onPress={() => navigation.navigate("Prelogin")} style={goBack}>
       <Ionicons name="arrow-back" size={28} color="gray" />
         <Text style={{
             color: 'gray',
@@ -33,9 +35,15 @@ const Signup_enterverification = ({navigation}) => {
 
 
     </View>
+    </LinearGradient>
   )
 }
 
 export default Signup_enterverification
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+gradientContainer: {
+    flex: 1
+}
+
+})

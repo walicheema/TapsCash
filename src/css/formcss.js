@@ -16,7 +16,7 @@ module.exports = {
     },
     formbtn: {
         width: '80%',
-        backgroundColor: 'black',
+        backgroundColor: 'rgba(255, 255, 255, 0.5)',
         borderRadius: 10,
         borderColor: 'white',
         borderWidth: 1,
@@ -27,14 +27,14 @@ module.exports = {
         paddingHorizontal: 10,
     },
     formTextLinkRight: {
-        color: 'gray',
+        color: 'white',
         fontSize: 15,
         textAlign: 'right',
         width: '80%',
         marginVertical: 10,
     },
     formTextLinkCenter: {
-        color: 'gray',
+        color: 'white',
         fontSize: 16,
     },
     formHead2: {
@@ -42,9 +42,14 @@ module.exports = {
         color: 'white',
         textAlign: 'center',
     },
+    formHead2Left: {
+        fontSize: 20,
+        color: 'white',
+        textAlign: 'left',
+    },
     formHead3: {
         fontSize: 20,
-        color: 'grey',
+        color: 'white',
         textAlign: 'center',
         fontWeight: '400',
         padding: 10,

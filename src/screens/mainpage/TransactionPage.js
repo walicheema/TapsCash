@@ -6,7 +6,8 @@ import Bottomnavbar from '../../components/Bottomnavbar'
 import Topnavbar from '../../components/Topnavbar'
 import FollowersRandomPost from '../../components/FollowersRandomPost'
 import UserCard from '../../cards/UserCard'
-
+import { LinearGradient } from 'expo-linear-gradient';
+import MoneyInput from '../../cards/MoneyInput'
 const TransactionPage = ({ navigation }) => {
 
   let data =[
@@ -17,6 +18,7 @@ const TransactionPage = ({ navigation }) => {
     },
     {
         username: "user2",
+        name: "Bianca",
         profile_image: "https://picsum.photos/200/300"
     },
     {
@@ -58,10 +60,15 @@ const TransactionPage = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
+      <LinearGradient colors={['#05B3EA', 'pink']} style={styles.gradientContainer}>
       <StatusBar />
       <Bottomnavbar navigation={navigation} page={"TransactionPage"} />
       <Topnavbar />
-      <Text style={styles.usernameText}>Hello, {data.username}</Text>
+      <Text style={styles.usernameText}>Hello, {data[1].name}</Text>
+      <View style={styles.headerText}>
+        <Text style={styles.txt}></Text>
+        <MoneyInput />
+      </View>
       <View style={styles.tapContainer}>
         <TouchableOpacity style={styles.circle} onPress={handleTapPress}>
           <Text style={styles.circleText}>TAP!</Text>
@@ -75,6 +82,7 @@ const TransactionPage = ({ navigation }) => {
             })
         }
       </ScrollView>
+      </LinearGradient>
     </View>
   )
 }
@@ -84,24 +92,26 @@ export default TransactionPage
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'black',
+  },
+  gradientContainer: {
+    flex: 1
   },
   tapContainer: {
     alignItems: 'center',
     justifyContent: 'flex-end',
-    marginTop: 50,
+    marginTop: 20,
     marginBottom: 20,
   },
   circle: {
     width: 150,
     height: 150,
     borderRadius: 75,
-    backgroundColor: 'red',
+    backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
   },
   circleText: {
-    color: 'white',
+    color: 'red',
     fontSize: 30,
     fontWeight: 'bold',
   },
@@ -123,11 +133,12 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   usernameText: {
-    fontSize: 16,
+    fontSize: 45,
     fontWeight: 'bold',
     color: 'white',
     alignSelf: 'center',
-    marginBottom: 10,
+    marginTop: 70,
+    marginBottom: 15,
   },
   
 })

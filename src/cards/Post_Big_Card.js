@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { AntDesign } from '@expo/vector-icons'
 import { row } from '../css/pagecss';
 import { FontAwesome5 } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const Post_Big_Card = ({
             post_pic,
@@ -15,6 +16,7 @@ const Post_Big_Card = ({
     const [isliked, setIsLiked] = useState(false)
     const [showcomments, setShowComments] = useState(false)
   return (
+    
     <View style={styles.container}>
         <View style={styles.c1}>
             <Image source ={{uri: profile_image}} style={styles.profilepic}/>
@@ -73,17 +75,17 @@ const styles = StyleSheet.create({
     container: {
         width: '100%',
         //height: 500,
-        backgroundColor: 'white',
+        backgroundColor: 'transparent',
         marginVertical: 10,
         borderRadius: 10,
-
     },
     c1: {
         width: '100%',
         flexDirection: 'row',
         alignItems: 'center',
         padding: 10,
-        backgroundColor: 'black'
+        backgroundColor: 'transparent',
+        borderColor: 'white',
     },
     profilepic: {
         width: 30,
@@ -101,11 +103,13 @@ const styles = StyleSheet.create({
     image: {
         width: '100%',
         aspectRatio: 1,
+        borderRadius: 15,
+        marginVertical: 10
     },
     s2: {
         width: '100%',
         flexDirection: row,
-        backgroundColor: 'black',
+        backgroundColor: 'transparent',
         padding: 10,
         alignItems: 'center',
     },
@@ -132,7 +136,7 @@ const styles = StyleSheet.create({
     },
     s3: {
         width: '100%',
-        backgroundColor: '#111111'
+        backgroundColor: 'transparent'
     },
     commentuser: {
         color: 'white',
@@ -148,5 +152,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         marginVertical: 3,
+        borderColor: 'white'
     }
 })

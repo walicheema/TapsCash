@@ -5,6 +5,7 @@ import { formHead } from '../../css/formcss'
 import Bottomnavbar from '../../components/Bottomnavbar'
 import Topnavbar from '../../components/Topnavbar'
 import FollowersRandomPost from '../../components/FollowersRandomPost'
+import { LinearGradient } from 'expo-linear-gradient'
 
 const My_UserProfile = ({navigation}) => {
   const data= {
@@ -34,6 +35,7 @@ const My_UserProfile = ({navigation}) => {
     ]
   }
   return (
+    <LinearGradient colors={['#05B3EA', 'pink']} >
     <View style={styles.container}>
         <StatusBar />
         <Bottomnavbar navigation={navigation} page={"My_UserProfile"}/>
@@ -43,7 +45,6 @@ const My_UserProfile = ({navigation}) => {
         <View style={styles.c1}>
           <Image style={styles.profilepic} source = {{uri: data.profile_image}}/>
           <Text style={styles.txt}>@{data.username}</Text>
-          <Text style={styles.usernameText}>@{data.username}</Text>
           <View style={styles.c11}>
             <View style={styles.c111}>
               <Text style={styles.txt1}>Followers:</Text>
@@ -67,7 +68,6 @@ const My_UserProfile = ({navigation}) => {
 
           </View>
 
-          <Text style={styles.description}>{data.description}</Text>
         </View>
         <View style={styles.c1}>
           <Text style={styles.txt}>Your Drips</Text>
@@ -87,6 +87,7 @@ const My_UserProfile = ({navigation}) => {
         </View>
       </ScrollView>
     </View>
+    </LinearGradient>
   )
 }
 
@@ -96,7 +97,7 @@ const styles = StyleSheet.create({
     container: {
         width: '100%',
         height: '100%',
-        backgroundColor: 'black',
+        backgroundColor: 'transparent',
         paddingVertical: 50,
     },
     c1: {
@@ -110,6 +111,16 @@ const styles = StyleSheet.create({
       margin: 10,
     },
     txt: {
+      color: 'white',
+      fontSize: 20,
+      fontWeight: 'bold',
+      margin: 10,
+      backgroundColor: '#111111',
+      paddingVertical: 10,
+      paddingHorizontal: 20,
+      borderRadius: 50
+    },
+    txt2: {
       color: 'white',
       fontSize: 20,
       fontWeight: 'bold',

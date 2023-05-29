@@ -19,7 +19,7 @@ export default UserCard
 
 const styles = StyleSheet.create({
     UserCard: {
-        backgroundColor: '#111111',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
         width: '100%',
         marginTop: 10,
         borderRadius: 20,

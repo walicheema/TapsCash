@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-evenly',
-        backgroundColor: "#111111",
+        backgroundColor: 'rgba(0,0,0,0.5)',
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
         position: 'absolute',

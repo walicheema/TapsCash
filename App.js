@@ -17,6 +17,12 @@ import SearchUserPage from './src/screens/mainpage/SearchUserPage';
 import TransactionPage from './src/screens/mainpage/TransactionPage';
 import My_UserProfile from './src/screens/profile/My_UserProfile';
 import Settings1 from './src/screens/settings/Settings1';
+import MoneyInput from './src/cards/MoneyInput';
+import Prelogin from './src/screens/loginSignUp/login/prelogin';
+import FirstIntro from './src/screens/loginSignUp/signup/FirstIntro';
+import SecondIntro from './src/screens/loginSignUp/signup/SecondIntro';
+import ThirdIntro from './src/screens/loginSignUp/signup/ThirdIntro';
+import FourthIntro from './src/screens/loginSignUp/signup/FourthIntro';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +30,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false, animation: 'slide_from_right'}}>
+
+        <Stack.Screen name="Prelogin" component={Prelogin} />
         <Stack.Screen name="Login" component={login}
         options={{
           // animation: 'slide_from-right'
@@ -54,6 +62,7 @@ export default function App() {
           animation: 'slide_from_top'
         }}
         />
+        <Stack.Screen name="MoneyInput" component={MoneyInput} />
 
        <Stack.Screen name="My_UserProfile" component={My_UserProfile}
         
@@ -62,8 +71,13 @@ export default function App() {
         }}
         />
       <Stack.Screen name="Settings1" component={Settings1} />
+      <Stack.Screen name="FirstIntro" component={FirstIntro} />
+      <Stack.Screen name="SecondIntro" component={SecondIntro} />
+      <Stack.Screen name="ThirdIntro" component={ThirdIntro} />
+      <Stack.Screen name="FourthIntro" component={FourthIntro} />
 
-
+      
+      
       </Stack.Navigator>
     </NavigationContainer>
   );
