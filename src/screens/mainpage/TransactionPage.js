@@ -55,7 +55,7 @@ const TransactionPage = ({ navigation }) => {
     },
   ]
   const handleTapPress = () => {
-    // Logic to handle tap press
+    navigation.navigate('TappedPage')
   }
 
   return (

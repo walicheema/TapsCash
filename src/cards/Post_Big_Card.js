@@ -49,7 +49,7 @@ const Post_Big_Card = ({
             }>Comment:  </Text>
             </View>
         </View>
-
+        
         {
             showcomments == true && 
             <View style={styles.s3}>
