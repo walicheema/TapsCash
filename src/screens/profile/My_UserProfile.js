@@ -96,6 +96,12 @@ const My_UserProfile = ({navigation}) => {
             </TouchableOpacity>
           </View>
 
+          <View style={styles.c1}>
+            <TouchableOpacity onPress={() => navigation.navigate("MyFinances")}>
+              <Text style={styles.txt}>View Finances</Text>
+            </TouchableOpacity>
+          </View>
+
           <Modal visible={showDrips} animationType="slide">
             <View style={styles.modalContainer}>
               <TouchableOpacity onPress={toggleDripsWindow} style={styles.closeButton}>
@@ -158,7 +164,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(250,250,250,0.5)',
     paddingVertical: 10,
     paddingHorizontal: 20,
-    borderRadius: 50
+    borderRadius: 5
   },
   txt1: {
     color: 'white',

@@ -28,6 +28,7 @@ import TappedPage from './src/screens/mainpage/transactions/TappedPage';
 import SendManually from './src/screens/mainpage/transactions/SendManually';
 import CardChoosePage from './src/screens/mainpage/transactions/CardChoosePage';
 import ScheduleSend from './src/screens/mainpage/transactions/ScheduleSend';
+import MyFinances from './src/screens/profile/MyFinances';
 
 const Stack = createNativeStackNavigator();
 
@@ -85,7 +86,7 @@ export default function App() {
       <Stack.Screen name = "SendManually" component={SendManually} />
       <Stack.Screen name = "CardChoosePage" component={CardChoosePage} />
       <Stack.Screen name = "ScheduleSend" component={ScheduleSend} />
-      
+      <Stack.Screen name = "MyFinances" component={MyFinances} />
       
       </Stack.Navigator>
     </NavigationContainer>

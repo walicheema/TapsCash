@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     activeicons1: {
-        backgroundColor: 'white',
+        backgroundColor: 'transparent',
         borderRadius: 50,
         fontSize: 30,
         padding: 10,

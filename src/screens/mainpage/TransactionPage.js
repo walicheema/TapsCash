@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   circleText: {
-    color: 'red',
+    color: '#05B3EA',
     fontSize: 30,
     fontWeight: 'bold',
   },
