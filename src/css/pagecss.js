@@ -3,7 +3,8 @@ module.exports = {
         width: '100%',
         height: '100%',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        backgroundColor: '#030818',
     },
     logo:{
         height: 70,
@@ -39,13 +40,14 @@ module.exports = {
         width: 100,
     },
     searchbar: {
-        width: '90%',
-        backgroundColor: 'white',
-        borderRadius: 30,
+        width: '85%',
+        backgroundColor: '#172348',
+        borderRadius: 10,
         paddingVertical: 10,
         paddingHorizontal: 20,
-        marginTop: 10, 
+        marginTop: 30, 
         fontSize: 18,
         alignSelf: 'center',
+        
     }
 }

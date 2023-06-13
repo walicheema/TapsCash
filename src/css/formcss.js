@@ -38,9 +38,10 @@ module.exports = {
         fontSize: 16,
     },
     formHead2: {
-        fontSize: 20,
+        fontSize: 23,
         color: 'white',
         textAlign: 'center',
+        fontWeight: 'semibold',
     },
     formHead2Left: {
         fontSize: 20,

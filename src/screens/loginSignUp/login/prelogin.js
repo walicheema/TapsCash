@@ -1,88 +1,77 @@
-import { StyleSheet, Text, View } from 'react-native';
-import React from 'react';
-import { LinearGradient } from 'expo-linear-gradient';
-import { formHead } from '../../../css/formcss';
+import * as React from "react";
+import { Text, StyleSheet, View, Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { Color, Border, FontFamily, FontSize, Padding } from "../../../css/GlobalStyles";
 
-const Prelogin = ({navigation}) => {
+const Prelogin = ({ navigation }) => {
   return (
-    <LinearGradient colors={['#05B3EA', 'pink']} style={styles.gradientContainer}>
-      <View style={styles.container}>
-        <Text style={styles.welcomeText}>Welcome to TAPS</Text>
-        <Text style={styles.Head}>Secure.</Text>
-        <Text style={styles.Head}>Smart.</Text>
-        <Text style={styles.LastHead}>Swift.</Text>
-        <View style={styles.line} />
-        <View style={styles.buttonsContainer}>
-          <Text style={[styles.button, styles.signupButton]} onPress={() => navigation.navigate('Signup_enterEmail')}>Sign Up</Text>
-          <Text style={[styles.button, styles.loginButton]} onPress={() => navigation.navigate('Login')}>Login</Text>
-        </View>
-      </View>
-    </LinearGradient>
+    <View style={styles.loadingScreen}>
+      <Text style={styles.getReadyTo}>{`GET READY TO TAP INTO THE FUTURE OF FINANCE`}</Text>
+      <Text style={styles.enterReallyCool}>
+        Enter really cool and really slick slogan here
+      </Text>
+      <Pressable
+        style={[styles.button, styles.signInButton]}
+        onPress={() => navigation.navigate("Login")}
+      >
+        <Text style={styles.buttonText}>Sign In</Text>
+      </Pressable>
+      <Pressable
+        style={[styles.button, styles.signUpButton]}
+        onPress={() => navigation.navigate("Signup_enterEmail")}
+      >
+        <Text style={styles.buttonText}>Sign Up</Text>
+      </Pressable>
+    </View>
   );
 };
 
-export default Prelogin;
-
 const styles = StyleSheet.create({
-  gradientContainer: {
+  loadingScreen: {
     flex: 1,
+    backgroundColor: "#030818",
+    alignItems: "center",
+    justifyContent: "flex-end",
+    paddingBottom: 100,
   },
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingHorizontal: 20,
-    paddingBottom: 20,
+  getReadyTo: {
+    fontSize: 23,
+    letterSpacing: -0.3,
+    fontFamily: FontFamily.redHatDisplaySemibold,
+    color: Color.white,
+    textAlign: "center",
+    marginBottom: 10,
+    marginRight: 5,
+    marginLeft: 5,
   },
-  welcomeText: {
-    fontSize: 50,
-    color: 'white',
-    fontWeight: 'bold',
-    textAlign: 'center',
-    marginBottom: 40,
-  },
-  line: {
-    width: '100%',
-    height: 1,
-    backgroundColor: 'white',
-    marginVertical: 20,
-    marginTop: 60
-  },
-  secureText: {
-    fontSize: 20,
-    color: 'white',
-    textAlign: 'center',
-    marginBottom: 20,
-  },
-  buttonsContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: '100%',
+  enterReallyCool: {
+    fontSize: FontSize.size_base,
+    letterSpacing: -0.2,
+    fontFamily: FontFamily.redHatDisplayRegular,
+    color: "#9ea1a4",
+    textAlign: "center",
+    marginBottom: 50,
   },
   button: {
-    fontSize: 25,
-    color: 'white',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 20,
+    width: 200,
+    height: 50,
+    borderRadius: 10,
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 20,
   },
-  signupButton: {
-    alignSelf: 'flex-start',
+  signInButton: {
+    backgroundColor: "#60A3f2",
   },
-  loginButton: {
-    alignSelf: 'flex-end',
+  signUpButton: {
+    backgroundColor: "#FD87FF",
   },
-  Head: {
-    fontSize: 40,
-    color: 'white',
-    textAlign: 'center',
-    fontWeight: 'bold',
-    },
-    LastHead: {
-        fontSize: 40,
-        color: 'white',
-        textAlign: 'center',
-        fontWeight: 'bold',
-        marginBottom: 200
-    },
+  buttonText: {
+    color: Color.white,
+    fontSize: FontSize.size_lg,
+    fontFamily: FontFamily.redHatDisplayMedium,
+    fontWeight: "500",
+  },
 });
+
+export default Prelogin;

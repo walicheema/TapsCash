@@ -1,45 +1,101 @@
-import { StyleSheet, Image, Text, TextInput, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native'
 import React from 'react'
-import { containerFull, goBack, logo1 } from '../../../css/pagecss'
-import { Ionicons } from '@expo/vector-icons';
 import logo from '../../../../assets/logo.png'
-import { formHead2, formHead3, formInput, formbtn } from '../../../css/formcss';
-import { LinearGradient } from 'expo-linear-gradient';
+import { containerFull, hr80 } from '../../../css/pagecss'
+import { formInput, formTextLinkRight, formTextLinkCenter } from '../../../css/formcss'
+import { formHead, formbtn } from '../../../css/formcss'
+import { LinearGradient } from 'expo-linear-gradient'
 
-const Signup_chooseusername = ({navigation}) => {
+const Signup_chooseusername = ({ navigation }) => {
   return (
-    <LinearGradient colors={['#05B3EA', 'pink']} >
-    <View style={containerFull}>
-      <TouchableOpacity onPress={() => navigation.navigate("Prelogin")} style={goBack}>
-      <Ionicons name="arrow-back" size={28} color="gray" />
-        <Text style={{
-            color: 'gray',
-            fontsize: 16,
-            marginLeft: 10,
-            fontWeight: 'bold'
-        }}>
-              Go Back
+      <View style={styles.gradientContainer}>
+        <Text style={styles.signIn}>Sign in</Text>
+
+        <View style={styles.inputContainer}>
+          <TextInput placeholder="Enter Email" style={styles.formInput} />
+        </View>
+
+        <View style={styles.inputContainer}>
+          <TextInput placeholder="Password" style={styles.formInput} secureTextEntry={true} />
+        </View>
+
+        <Text style={styles.dontHaveAccount}>
+          Don't have an account yet?{' '}
+          <Text style={{ color: '#05b3ea' }} onPress={() => navigation.navigate('Signup_enterEmail')}>
+            Sign Up
+          </Text>
         </Text>
-      </TouchableOpacity>
-      <Image source = {logo} style={logo}></Image>
-      <Text style={formHead3}>Choose a Username</Text>
-      <TextInput placeholder="Enter a username"
-      style ={formInput} />
-
-      <Text style={formbtn}
-        onPress={() => navigation.navigate('Signup_choosepassword')}
-        >
-            Next
+        <Text style={styles.dontHaveAccount}>
+          Forgot your password?{' '}
+          <Text style={{ color: '#05b3ea' }} onPress={() => navigation.navigate('Forgotpassword_enteremail')}>
+            Recover
+          </Text>
         </Text>
-
-
-
-    </View>
-    </LinearGradient>
+        <LinearGradient colors={['#60A3F2', '#FD87FF']} style={styles.submitButton}>
+        <TouchableOpacity  onPress={() => navigation.navigate('TransactionPage')}>
+          <Text style={styles.submitButtonText}>Continue</Text>
+        </TouchableOpacity>
+        </LinearGradient>
+      </View>
   )
 }
 
+const styles = StyleSheet.create({
+  gradientContainer: {
+    flex: 1,
+    backgroundColor: 'black'
+  },
+  signIn: {
+    marginTop: 100,
+    fontSize: 28,
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'left',
+    marginLeft: 20,
+    marginBottom: 230,
+  },
+  inputContainer: {
+    marginTop: 20,
+    marginHorizontal: 20,
+    borderWidth: 1,
+    borderColor: 'white',
+    borderRadius: 5,
+  },
+  formInput: {
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    color: 'white',
+    fontSize: 16
+  },
+  forgotPassword: {
+    marginTop: 10,
+    fontSize: 14,
+    color: 'white',
+    textAlign: 'left',
+    marginLeft: 20,
+  },
+  submitButton: {
+    marginTop: 800,
+    marginHorizontal: 20,
+    borderRadius: 5,
+    paddingVertical: 15,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'transparent',
+    backgroundGradient: 'linear-gradient(90deg, #05B3EA, pink)',
+  },
+  submitButtonText: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 16,
+  },
+  dontHaveAccount: {
+    marginLeft: 20,
+    marginTop: 20,
+    textAlign: 'left',
+    fontSize: 14,
+    color: 'white',
+  },
+})
 
 export default Signup_chooseusername
-
-const styles = StyleSheet.create({})

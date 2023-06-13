@@ -11,6 +11,7 @@ const ScheduleSend = ({ navigation }) => {
   const handleDateChange = (event, selected) => {
     if (selected) {
       setSelectedDate(selected);
+      // Enter logic here for what happens after date is picked
     }
     setShowPicker(Platform.OS === 'ios');
   };

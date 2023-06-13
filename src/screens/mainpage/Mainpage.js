@@ -9,14 +9,12 @@ import { LinearGradient } from 'expo-linear-gradient'
 
 const MainPage = ({navigation}) => {
   return (
-    <LinearGradient colors={['#05B3EA', 'pink']} style={styles.gradientContainer}>
     <View style={styles.container}>
         <StatusBar />
         <Bottomnavbar navigation={navigation} page={"Mainpage"}/>
         <Topnavbar />
       <FollowersRandomPost />
     </View>
-    </LinearGradient>
   )
 }
 
@@ -27,5 +25,7 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%',
         paddingVertical: 50,
-    }
+        backgroundColor: '#030818'
+    },
+    
 })

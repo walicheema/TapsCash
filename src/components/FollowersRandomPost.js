@@ -26,7 +26,8 @@ const FollowersRandomPost = () => {
             username: "user12",
             comment: "example comment 2"
         }
-    ]
+    ],
+    caption: 'For the laptop'
     },
     {
         id: 3, 
@@ -47,7 +48,8 @@ const FollowersRandomPost = () => {
                 username: "user12",
                 comment: "example comment 2"
             }
-        ]
+        ],
+        caption: 'Camping supplies!'
         },   
     {
         id: 2, 
@@ -68,7 +70,8 @@ const FollowersRandomPost = () => {
                 username: "user12",
                 comment: "example comment 2"
             }
-        ] 
+        ],
+        caption: 'Safety first'
     },
     {
         id: 4, 
@@ -89,7 +92,8 @@ const FollowersRandomPost = () => {
                 username: "user12",
                 comment: "example comment 2"
             }
-        ]
+        ],
+        caption: 'Photoshoot'
         },
     {
             id: 5, 
@@ -110,7 +114,8 @@ const FollowersRandomPost = () => {
                         username: "user12",
                         comment: "example comment 2"
                     }
-                ]
+                ],
+                caption: 'Bench date'
                 },
 ]
   //console.log(data[1].username)
@@ -126,6 +131,7 @@ const FollowersRandomPost = () => {
             post_pic = {item.image}
             likes = {item.likes}
             comments = {item.comments}
+            caption = {item.caption}
             />
         )
       })
