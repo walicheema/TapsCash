@@ -144,7 +144,7 @@ export default FollowersRandomPost
 
 const styles = StyleSheet.create({
     container: {
-        width: '100%',
+        width: '85%',
         flexDirection: 'column',
     }
 })

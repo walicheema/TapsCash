@@ -177,7 +177,6 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: 'semibold',
     color: 'white',
-    alignSelf: 'left',
     marginTop: 70,
     marginBottom: 15,
     marginLeft: 30
@@ -231,8 +230,8 @@ const styles = StyleSheet.create({
   friendImage: {
     width: 45,
     height: 45,
-    borderRadius: 20,
-    marginRight: 10,
+    borderRadius: 15,
+    marginRight: 5,
   },
     searchContainer: {
     flexDirection: 'row',

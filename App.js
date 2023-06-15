@@ -23,12 +23,12 @@ import FirstIntro from './src/screens/loginSignUp/signup/FirstIntro';
 import SecondIntro from './src/screens/loginSignUp/signup/SecondIntro';
 import ThirdIntro from './src/screens/loginSignUp/signup/ThirdIntro';
 import FourthIntro from './src/screens/loginSignUp/signup/FourthIntro';
-import My_Drips from './src/screens/profile/My_Drips';
 import TappedPage from './src/screens/mainpage/transactions/TappedPage';
 import SendManually from './src/screens/mainpage/transactions/SendManually';
 import CardChoosePage from './src/screens/mainpage/transactions/CardChoosePage';
 import ScheduleSend from './src/screens/mainpage/transactions/ScheduleSend';
 import MyFinances from './src/screens/profile/MyFinances';
+import PastDrips from './src/screens/profile/PastDrips';
 
 const Stack = createNativeStackNavigator();
 
@@ -55,7 +55,11 @@ export default function App() {
         <Stack.Screen name="Forgotpassword_choosepassword" component={Forgotpassword_choosepassword} />
         <Stack.Screen name="Forgotpassword_accountrecovered" component={Forgotpassword_accountrecovered} />
 
-        <Stack.Screen name="Mainpage" component={MainPage} />
+        <Stack.Screen name="Mainpage" component={MainPage} 
+        options={{
+          animation: 'slide_from_bottom'
+        }}
+        />
         <Stack.Screen name="SearchUserPage" component={SearchUserPage}
         
         options={{
@@ -81,13 +85,12 @@ export default function App() {
       <Stack.Screen name="SecondIntro" component={SecondIntro} />
       <Stack.Screen name="ThirdIntro" component={ThirdIntro} />
       <Stack.Screen name="FourthIntro" component={FourthIntro} />
-      <Stack.Screen name="My_Drips" component={My_Drips} />
       <Stack.Screen name="TappedPage" component={TappedPage} />
       <Stack.Screen name = "SendManually" component={SendManually} />
       <Stack.Screen name = "CardChoosePage" component={CardChoosePage} />
       <Stack.Screen name = "ScheduleSend" component={ScheduleSend} />
       <Stack.Screen name = "MyFinances" component={MyFinances} />
-      
+      <Stack.Screen name = "PastDrips" component={PastDrips} />
       </Stack.Navigator>
     </NavigationContainer>
   );

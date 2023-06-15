@@ -3,10 +3,9 @@ import { StyleSheet, Text, View, ScrollView, StatusBar, TouchableOpacity, Image 
 import { LinearGradient } from 'expo-linear-gradient';
 import { MaterialIcons } from '@expo/vector-icons';
 import Bottomnavbar from '../../components/Bottomnavbar';
-import UserCard from '../../cards/UserCard';
-import MyFinances from './MyFinances';
-
-const My_UserProfile = ({ navigation }) => {
+import { Ionicons } from '@expo/vector-icons';
+import FollowersRandomPost from '../../components/FollowersRandomPost';
+const PastDrips = ({ navigation }) => {
   const data = [
     {
       username: "user1",
@@ -32,10 +31,6 @@ const My_UserProfile = ({ navigation }) => {
     // ... rest of the data objects
   ];
 
-  const handleTapPress = () => {
-    navigation.navigate('TappedPage');
-  };
-
   const [keyword, setKeyword] = useState('');
 
   
@@ -47,7 +42,9 @@ const My_UserProfile = ({ navigation }) => {
         <View style={styles.content}>
 
         <View style={styles.header}>
-            <Text style={styles.title}>My Profile</Text>
+        <TouchableOpacity onPress={() => navigation.navigate('My_UserProfile')} style={styles.settingsIcon}>
+            <Ionicons name="arrow-back" size={24} color="white" />
+            </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('Settings1')} style={styles.settingsIcon}>
               <MaterialIcons name="settings" size={24} color="white" />
             </TouchableOpacity>
@@ -74,93 +71,20 @@ const My_UserProfile = ({ navigation }) => {
             </View>
           </View>
           
-          <Text style={styles.headerText}>Friends</Text>
-          <View style={{ height: 80 }}>
-            <ScrollView horizontal showsHorizontalScrollIndicator={true}>
-              <View style={styles.friendList}>
-                {data.map((item, index) => (
-                  <Image
-                    key={item.username}
-                    source={{ uri: item.profile_image }}
-                    style={styles.friendImage}
-                  />
-                ))}
-              </View>
-            </ScrollView>
-          </View>
 
           <View style={styles.itemContainer}>
-            <Text style={styles.headerText}>Balance</Text>
-            <Text style={styles.balanceAmount}>$10,670.50</Text>
-            <TouchableOpacity
-              onPress={() => navigation.navigate('MyFinances')}
-              style={styles.spendingHistoryButton}
-            >
-              <LinearGradient
-                colors={['#3D95E4', '#FB5597']}
-                start={[0, 0]}
-                end={[1, 0]}
-                style={styles.spendingHistoryGradient}
-              >
-                <MaterialIcons name="keyboard-arrow-right" size={30} color="white" style={styles.arrow} />
-                <Text style={styles.spendingHistoryText}>See Spending History</Text>
-              </LinearGradient>
-            </TouchableOpacity>
-          </View>
+            <Text style={styles.headerText}>My DRIPS</Text>
+            
+            {/* Pink rectangle boxes */}
+            <View style={styles.boxContainer}>
+            <FollowersRandomPost style ={styles.width}/>
 
-          <View style={styles.itemContainer}>
-            <Text style={styles.headerText}>Scheduled TAPS</Text>
-            {data.map((item, index) => (
-              <View style={styles.dataItem} key={index}>
-                <Image source={{ uri: item.profile_image }} style={styles.dataItemImage} />
-                <View style={styles.dataItemTextContainer}>
-                  <Text style={styles.dataItemName}>{item.name}</Text>
-                  <Text style={styles.dataItemCaption}>{item.caption}</Text>
-                </View>
-              </View>
-            ))}
-            <TouchableOpacity
-              onPress={() => console.log('See Spending History')}
-              style={styles.spendingHistoryButton}
-            >
-              <LinearGradient
-                colors={['#3D95E4', '#FB5597']}
-                start={[0, 0]}
-                end={[1, 0]}
-                style={styles.spendingHistoryGradient}
-              >
-                <MaterialIcons name="keyboard-arrow-right" size={30} color="white" style={styles.arrow} />
-                <Text style={styles.spendingHistoryText}>See All Scheduled TAPS</Text>
-              </LinearGradient>
-            </TouchableOpacity>
-          </View>
+            </View>
 
-          <View style={styles.itemContainer}>
-            <Text style={styles.headerText}>Past DRIPS</Text>
-            {data.map((item, index) => (
-              <View style={styles.dataItem} key={index}>
-                <Image source={{ uri: item.profile_image }} style={styles.dataItemImage} />
-                <View style={styles.dataItemTextContainer}>
-                  <Text style={styles.dataItemName}>{item.date}</Text>
-                  <Text style={styles.dataItemCaption}>{item.caption}</Text>
-                </View>
-              </View>
-            ))}
-            <TouchableOpacity
-              onPress={() => navigation.navigate('PastDrips')}
-              style={styles.spendingHistoryButton}
-            >
-              <LinearGradient
-                colors={['#3D95E4', '#FB5597']}
-                start={[0, 0]}
-                end={[1, 0]}
-                style={styles.spendingHistoryGradient}
-              >
-                <MaterialIcons name="keyboard-arrow-right" size={30} color="white" style={styles.arrow} />
-                <Text style={styles.spendingHistoryText}>See All Past DRIPS</Text>
-              </LinearGradient>
-            </TouchableOpacity>
+
+
           </View>
+          
         </View>
       </ScrollView>
       <Bottomnavbar navigation={navigation} page={'TransactionPage'} />
@@ -168,12 +92,15 @@ const My_UserProfile = ({ navigation }) => {
   );
 };
 
-export default My_UserProfile;
+export default PastDrips;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#030818',
+  },
+  width: {
+    width: '85%'
   },
   content: {
     flex: 1,
@@ -247,6 +174,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     color: 'white',
     marginLeft: 30,
+    marginBottom: 30,
   },
   friendList: {
     flexDirection: 'row',
@@ -266,26 +194,6 @@ const styles = StyleSheet.create({
     marginLeft: 30,
     marginTop: 20,
     marginBottom: 10,
-  },
-  spendingHistoryButton: {
-    marginTop: 15,
-    width: '100%',
-    alignItems: 'flex-start',
-    marginLeft: 50,
-  },
-  spendingHistoryGradient: {
-    borderRadius: 25,
-    paddingHorizontal: 72,
-    paddingVertical: 10,
-    flexDirection: 'row',
-  },
-  spendingHistoryText: {
-    fontSize: 16,
-    fontWeight: 'semibold',
-    color: 'white',
-    textAlign: 'left',
-    width: '100%',
-    marginRight: 40,
   },
   arrow: {
     position: 'absolute',
@@ -330,5 +238,49 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'normal',
   },
-  
+  boxContainer: {
+    marginTop: 20,
+    alignItems: 'center',
+  },
+  pinkBox: {
+    width: '85%',
+    backgroundColor: '#FD87FF',
+    borderRadius: 20,
+    padding: 20,
+    marginBottom: 20,
+  },
+  blueBox: {
+    width: '85%',
+    backgroundColor: '#05B3EA',
+    borderRadius: 20,
+    padding: 20,
+    marginBottom: 20,
+  },
+  boxTitle: {
+    fontSize: 18,
+    //fontWeight: 'bold',
+    color: 'black',
+  },
+  boxAmount: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: 'black',
+    marginTop: 10,
+  },
+  button: {
+    backgroundColor: '#172348',
+    borderWidth: 1,
+    borderColor: 'white',
+    borderRadius: 5,
+    paddingVertical: 15,
+    alignItems: 'center',
+    marginBottom: 10,
+    width: '85%',
+    marginTop: 40
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
 });

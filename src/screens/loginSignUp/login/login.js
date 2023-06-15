@@ -8,35 +8,44 @@ import { LinearGradient } from 'expo-linear-gradient'
 
 const Login = ({ navigation }) => {
   return (
-      <View style={styles.gradientContainer}>
-        <Text style={styles.signIn}>Sign in</Text>
+    <View style={styles.gradientContainer}>
+      <Text style={styles.signIn}>Sign in</Text>
 
-        <View style={styles.inputContainer}>
-          <TextInput placeholder="Enter Email" style={styles.formInput} />
-        </View>
+      <View style={styles.inputContainer}>
+        <TextInput
+          placeholder="Enter Email"
+          style={styles.formInput}
+          placeholderTextColor="white"
+        />
+      </View>
 
-        <View style={styles.inputContainer}>
-          <TextInput placeholder="Password" style={styles.formInput} secureTextEntry={true} />
-        </View>
+      <View style={styles.inputContainer}>
+        <TextInput
+          placeholder="Password"
+          style={styles.formInput}
+          secureTextEntry={true}
+          placeholderTextColor="white"
+        />
+      </View>
 
-        <Text style={styles.dontHaveAccount}>
-          Don't have an account yet?{' '}
-          <Text style={{ color: '#05b3ea' }} onPress={() => navigation.navigate('Signup_enterEmail')}>
-            Sign Up
-          </Text>
+      <Text style={styles.dontHaveAccount}>
+        Don't have an account yet?{' '}
+        <Text style={{ color: '#05b3ea' }} onPress={() => navigation.navigate('Signup_enterEmail')}>
+          Sign Up
         </Text>
-        <Text style={styles.dontHaveAccount}>
-          Forgot your password?{' '}
-          <Text style={{ color: '#05b3ea' }} onPress={() => navigation.navigate('Forgotpassword_enteremail')}>
-            Recover
-          </Text>
+      </Text>
+      <Text style={styles.dontHaveAccount}>
+        Forgot your password?{' '}
+        <Text style={{ color: '#05b3ea' }} onPress={() => navigation.navigate('Forgotpassword_enteremail')}>
+          Recover
         </Text>
-        <LinearGradient colors={['#60A3F2', '#FD87FF']} style={styles.submitButton}>
-        <TouchableOpacity  onPress={() => navigation.navigate('TransactionPage')}>
+      </Text>
+      <LinearGradient colors={['#60A3F2', '#FD87FF']} style={styles.submitButton}>
+        <TouchableOpacity onPress={() => navigation.navigate('TransactionPage')}>
           <Text style={styles.submitButtonText}>Continue</Text>
         </TouchableOpacity>
-        </LinearGradient>
-      </View>
+      </LinearGradient>
+    </View>
   )
 }
 

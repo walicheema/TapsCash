@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     marginBottom: 50,
   },
   button: {
-    width: 200,
+    width: '80%',
     height: 50,
     borderRadius: 10,
     justifyContent: "center",
@@ -61,10 +61,14 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   signInButton: {
-    backgroundColor: "#60A3f2",
+    backgroundColor: "#172348",
+    borderWidth: 1,
+    borderColor: '#05B3EA'
   },
   signUpButton: {
-    backgroundColor: "#FD87FF",
+    backgroundColor: "#172348",
+    borderWidth: 1,
+    borderColor: '#FF6699'
   },
   buttonText: {
     color: Color.white,
